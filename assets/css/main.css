@@ -13,4 +13,8 @@
   .navlink {
     @apply text-primary uppercase cursor-pointer transition-all duration-300;
   }
+
+  .post-content {
+    @apply text-primary text-justify text-base;
+  }
 }
