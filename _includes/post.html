@@ -1,0 +1,15 @@
+<html>
+  <a
+    href="/blog/{{ post.title | slugify }}"
+    class="first:border-t border-b border-x p-4 hover:scale-[1.01] hover:border-t transition-all duration-300 cursor-pointer flex flex-col gap-4"
+  >
+    <div class="flex flex-col gap-1">
+      <div class="flex items-center justify-between">
+        <div class="text-2xl font-bold text-accent">{{ post.title }}</div>
+        <div class="text-accent">{% include icons/arrow-up.html %}</div>
+      </div>
+      <div class="text-xs text-secondary opacity-70">27/07/2025</div>
+    </div>
+    <div class="text-base text-secondary">{{ post.subtitle }}</div>
+  </a>
+</html>

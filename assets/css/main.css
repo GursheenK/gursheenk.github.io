@@ -4,3 +4,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .body {
+    @apply bg-surface font-sans;
+  }
+
+  .navlink {
+    @apply text-primary uppercase cursor-pointer transition-all duration-300;
+  }
+}
