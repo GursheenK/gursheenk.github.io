@@ -13,7 +13,35 @@
 
   <body class="overflow-hidden h-screen flex">
     <div class="h-full w-1/3 p-20 pe-10 flex flex-col justify-between">
-      <a class="navlink text-5xl font-bold" href="/">{{ page.title }}</a>
+      <div class="flex flex-col gap-6">
+        <a class="navlink text-5xl font-bold" href="/">{{ page.title }}</a>
+
+        {% if page.sidebar_type == "links" %}
+        <div class="flex items-center gap-4 w-full">
+          <div
+            class="text-accent hover:text-primary transaition-all duration-500 cursor-pointer"
+          >
+            {% include icons/envelope.html %}
+          </div>
+          <div
+            class="text-accent hover:text-primary transaition-all duration-500 cursor-pointer"
+          >
+            {% include icons/github.html %}
+          </div>
+          <div
+            class="text-accent hover:text-primary transaition-all duration-500 cursor-pointer"
+          >
+            {% include icons/linkedin.html %}
+          </div>
+        </div>
+
+        {% else %}
+        <div class="border-t-[0.5px] border-accent rounded"></div>
+        <div class="text-base text-accent opacity-80 text-justify">
+          {{ page.subtitle }}
+        </div>
+        {% endif %}
+      </div>
 
       <div class="flex flex-col gap-3">
         <a
