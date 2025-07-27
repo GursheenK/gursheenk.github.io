@@ -8,7 +8,7 @@
         <div class="text-2xl font-bold text-accent">{{ post.title }}</div>
         <div class="text-accent">{% include icons/arrow-up.html %}</div>
       </div>
-      <div class="text-xs text-secondary opacity-70">27/07/2025</div>
+      <div class="text-xs text-secondary opacity-70">{{ post.date| date: "%d/%m/%Y" }}</div>
     </div>
     <div class="text-base text-secondary">{{ post.subtitle }}</div>
   </a>
