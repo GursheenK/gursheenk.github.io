@@ -21,10 +21,31 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
+      - name: Clean old CSS
+        run: rm -f ./_site/assets/css/main.css
+
       - name: Build site
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
+
+      - name: Debug CSS output
+        run: |
+          echo "=== CSS files in _site ==="
+          find _site -name "*.css" -exec ls -lh {} \;
+          echo "=== Size of main CSS ==="
+          wc -c ./_site/assets/css/main.css
+          echo "=== First 15 lines of CSS ==="
+          head -15 ./_site/assets/css/main.css
+
+      - name: Verify bg-red-500 is in CSS
+        run: |
+          if grep -q "bg-red-500" ./_site/assets/css/main.css; then
+            echo "SUCCESS: bg-red-500 found in CSS!"
+          else
+            echo "FAIL: bg-red-500 missing"
+            exit 1
+          fi
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
