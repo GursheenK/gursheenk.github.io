@@ -8,7 +8,6 @@ module.exports = {
         "./_posts/*.md",
         "./*.{html,md}",
     ],
-    safelist: ['*'],
     theme: {
         extend: {
             colors: {
