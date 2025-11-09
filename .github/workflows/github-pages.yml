@@ -38,12 +38,12 @@ jobs:
           echo "=== First 15 lines of CSS ==="
           head -15 ./_site/assets/css/main.css
 
-      - name: Verify bg-red-500 is in CSS
+      - name: Verify cursor-pointer is in CSS
         run: |
-          if grep -q "bg-red-500" ./_site/assets/css/main.css; then
-            echo "SUCCESS: bg-red-500 found in CSS!"
+          if grep -q "cursor-pointer" ./_site/assets/css/main.css; then
+            echo "SUCCESS: cursor-pointer found in CSS!"
           else
-            echo "FAIL: bg-red-500 missing"
+            echo "FAIL: cursor-pointer missing"
             exit 1
           fi
 
